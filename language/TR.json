@@ -72,10 +72,10 @@
             "MUST_TEXT": "```Lütfen herhangi bir mesajı yanıtlayın```"
         },
         "heroku": {
-            "RESTART_DESC": "AsenaBlack'i yeniden başlatın",
-            "RESTART_MSG": "```FelixBlack tarafından onay alındı yeniden Başlatılıyor...```",
-            "SHUTDOWN_DESC": "AsenaBlack'i kapatır.",
-            "SHUTDOWN_MSG": "*Zaten Uykum Gelmişti.\n*Teşekkürler ve İyi Geceler Sahibim..*\n```AsenaBlack Kapatılıyor... ⛔```",
+            "RESTART_DESC": "KP Bot'i yeniden başlatın",
+            "RESTART_MSG": "```Picasso tarafından onay alındı yeniden Başlatılıyor...```",
+            "SHUTDOWN_DESC": "KP Bot'i kapatır.",
+            "SHUTDOWN_MSG": "*Zaten Uykum Gelmişti.\n*Teşekkürler ve İyi Geceler Sahibim..*\n```KP Bot Kapatılıyor... ⛔```",
             "DYNO_DESC": "Heroku dyno kullanımını kontrol edin",
             "DYNO_TOTAL": "```Toplam Kota```",
             "DYNO_USED": "```Kullanılan kota```",
@@ -128,7 +128,7 @@
         "memes": {
             "MEMES_DESC": "Yanıt verdiğiniz fotoğrafa yazdığınız yazıyı ekler.\n⌨️ Örnek: .meme TEST;YAPIYOR",
             "NEED_REPLY": "*Bir fotoğraf veya videoya yanıt verin!*",
-            "DOWNLOADING": "```AsenaBlack Tarafından Medya indiriliyor & meme yapılıyor...```"
+            "DOWNLOADING": "```KP Bot Tarafından Medya indiriliyor & meme yapılıyor...```"
         },
         "ocr": {
             "OCR_DESC": "Yanıt verdiğiniz fotoğraftaki yazıları okur.\n⌨️ Örnek: .ocr tr",
@@ -142,7 +142,7 @@
             "KICKME": "```Ben Gidiyorum. 🤠```",
             "PP_DESC": "Yanıt verdiğiniz fotoğrafı profil fotoğrafınız yapar.",
             "NEED_PHOTO": "*Bana bir fotoğraf ver!*",
-            "PPING": "```WhatsAsena Tarafından Profil fotoğrafı yapılıyor...```",
+            "PPING": "```KP Bot Tarafından Profil fotoğrafı yapılıyor...```",
             "BLOCK_DESC": "Belirttiğiniz kullanıcıyı engeller.",
             "UNBLOCK_DESC": "Belirttiğiniz kullanıcının engelini kaldırır.",
             "BLOCKED": "FelixBlack Tarafından engellendin. Şansına Küs..",
@@ -205,14 +205,14 @@
         },
         "updater": {
             "UPDATER_DESC": "Güncelleme denetler.",
-            "UPDATE": "*Felix Abi herhangi bir değişiklik mevcut değil!*",
-            "NEW_UPDATE": "*Felix Abi Güncellemeler Bunlar!*\n\nDeğişiklikler:\n```",
+            "UPDATE": "*Picasso Abi herhangi bir değişiklik mevcut değil!*",
+            "NEW_UPDATE": "*Picasso Abi, Felix Abi Tarafından Güncellemeler Bunlar!*\n\nDeğişiklikler:\n```",
             "UPDATE_NOW_DESC": "Güncelleme yapar.",
             "UPDATING": "_Onay alındı lütfen bekleyiniz!..._",
             "INVALID_HEROKU": "*❌ Heroku bilgileriniz yanlış!*",
-            "UPDATED": "*✅ Felix Abi değişiklikler başarılı şekilde yüklendi!*",
-            "UPDATED_LOCAL": "*✅ Felix Abi değişiklikler başarılı şekilde yüklendi!*",
-            "AFTER_UPDATE": "*💬 Felix Abi Yeniden Başlatma gerekiyor lütfen bekleyiniz*"
+            "UPDATED": "*✅ Picasso Abi değişiklikler başarılı şekilde yüklendi!*",
+            "UPDATED_LOCAL": "*✅ Picasso Abi değişiklikler başarılı şekilde yüklendi!*",
+            "AFTER_UPDATE": "*💬 Picasso Abi Yeniden Başlatma gerekiyor lütfen bekleyiniz*"
         },
         "weather": {
             "WEATHER_DESC": "Hava durumu getirir.\n⌨️ Örnek: .weather bakü",
@@ -322,7 +322,7 @@
             "GÜNÜÇMUTE": "*Grup 3 gün süreyle susturuldu!*",
             "TÜR": "*Bilinmeyen Tür!*\n_Dakika: 1-59m_\n_Saat: 1-12h_\n_Gün: 1d-3d_",
             "MUTE_DESC": "Grup sohbetini kapatır. Sadece adminler mesaj gönderebilir!",
-            "MUTE_OPEN": "*Sohbet Tekrardan Açılmıştır!*"
+            "MUTE_OPEN": "*Konuşun Lan!*"
         },
         "unvoice": {
             "UV_DESC": "Müzik dosyasını sesli mesaja çevirir.",
