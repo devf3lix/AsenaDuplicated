@@ -30,7 +30,7 @@ if (Config.WORKTYPE == 'private') {
         )
     }
         else if (Config.ALIVEMSG == 'hg') {
-        await message.client.sendMessage(
+    await message.client.sendMessage(
             message.jid, 
             fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/video.mp4"),
             MessageType.video, 
@@ -60,7 +60,7 @@ else if (Config.WORKTYPE == 'public') {
             { mimetype: Mimetype.gif, caption: "```KPBot, KP Piçleri İçin Çalışıyor!```\n\n*Kurallar:* ```Tek Kural Saygısızlık Yapma Yeter Dostum```\n*Bot Geliştiricisi:* ```DevFelix```" }
         )
     }
-         else if (Config.ALIVEMSG == 'hg') {
+    else if (Config.ALIVEMSG == 'hg') {
         await message.client.sendMessage(
             message.jid, 
             fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/video.mp4"),
