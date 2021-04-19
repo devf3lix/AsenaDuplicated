@@ -29,6 +29,14 @@ if (Config.WORKTYPE == 'private') {
             { mimetype: Mimetype.gif, caption: "```KPBot, KP Piçleri İçin Çalışıyor!```\n\n*Kurallar:* ```Tek Kural Saygısızlık Yapma Yeter Dostum```\n*Bot Geliştiricisi:* ```DevFelix```" }
         )
     }
+        else if (Config.ALIVEMSG == 'hg') {
+        await message.client.sendMessage(
+            message.jid, 
+            fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/video.mp4"),
+            MessageType.video, 
+            { mimetype: Mimetype.mpeg, caption: "```Katil Piçler'e Hoşgeldin!```\n\n*Kurallar:* ```Tek Kural Saygısızlık Yapma Yeter Dostum```\n*Bot Geliştiricisi:* ```DevFelix```" }
+        )
+    }
  }));
 
     Asena.addCommand({pattern: 'sysd', fromMe: true, desc: Lang.SYSD_DESC}, (async (message, match) => {
@@ -50,6 +58,14 @@ else if (Config.WORKTYPE == 'public') {
             fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/video.mp4"),
             MessageType.video, 
             { mimetype: Mimetype.gif, caption: "```KPBot, KP Piçleri İçin Çalışıyor!```\n\n*Kurallar:* ```Tek Kural Saygısızlık Yapma Yeter Dostum```\n*Bot Geliştiricisi:* ```DevFelix```" }
+        )
+    }
+         else if (Config.ALIVEMSG == 'hg') {
+        await message.client.sendMessage(
+            message.jid, 
+            fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/video.mp4"),
+            MessageType.video, 
+            { mimetype: Mimetype.mpeg, caption: "```Katil Piçler'e Hoşgeldin!```\n\n*Kurallar:* ```Tek Kural Saygısızlık Yapma Yeter Dostum```\n*Bot Geliştiricisi:* ```DevFelix```" }
         )
     }
  }));
