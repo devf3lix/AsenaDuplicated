@@ -44,7 +44,7 @@ Asena.addCommand({pattern: 'speedtest', fromMe: true, desc: Lang.SPEEDTEST_DESC}
     await msg.delete();
 }));
 
-.addCommand({pattern: 'ping', fromMe: true, deleteCommand: false, desc: Lang.PING_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'ping', fromMe: true, deleteCommand: false, desc: Lang.PING_DESC}, (async (message, match) => {
   var start = new Date().getTime();
   var msg = await message.reply('```Ping!```');
   var end = new Date().getTime();
