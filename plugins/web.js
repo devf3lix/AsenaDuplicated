@@ -44,14 +44,14 @@ Asena.addCommand({pattern: 'speedtest', fromMe: true, desc: Lang.SPEEDTEST_DESC}
     await msg.delete();
 }));
 
-Asena.addCommand({pattern: 'ping', fromMe: true, deleteCommand: false, desc: Lang.PING_DESC}, (async (message, match) => {
+.addCommand({pattern: 'ping', fromMe: true, deleteCommand: false, desc: Lang.PING_DESC}, (async (message, match) => {
   var start = new Date().getTime();
   var msg = await message.reply('```Ping!```');
   var end = new Date().getTime();
 
   await msg.delete();
   await message.client.sendMessage(
-    message.jid,'*Felix`in Pingi;*\n```' + (end - start) + 'ms```', MessageType.text);
+    message.jid,'*KP Botu`nun Pingi;*\n```' + (end - start) + 'ms```', MessageType.text);
 }));
 
 if (Config.WORKTYPE == 'private') {
