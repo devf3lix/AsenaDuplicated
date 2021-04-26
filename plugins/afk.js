@@ -108,38 +108,3 @@ Asena.addCommand({pattern: 'afk ?(.*)', fromMe: true, deleteCommand: false, desc
         await message.client.sendMessage(message.jid,Lang.IM_AFK + (AFK.reason !== false ? ('\n*' + Lang.REASON +':* ```' + AFK.reason + '```') : ''),MessageType.text);
     }
 }));
-const ds = "Oyun Başlatır."
-
-Asena.addCommand({pattern: 'newgame ?(.*)', fromMe: true, desc: ds}, (async (message, match) => {     
-    if (!GAME.inGame) {
-        GAME.inGame = true;
-
-        await message.client.sendMessage(message.jid,'```Oyuna Girildi!```\n```Başlamak için #baslat yaz!```',MessageType.text);
-    }
-}));
-
-const bas = "Yeni Bir Oyun Başlattın!\nAmacın oyunun içindeki bulmacayı çözüp karakterini yönlendirmek."
-const bas1 = "Dikkatli ol! Seçimlerin hikayeyi değiştirebilir. Akıllıca seçimler yapmalısın!"
-const bas2 = "Ve Unutma.. Yanlış seçim seni ölüme götürebilir!"
-
-Asena.addCommand({on: '#baslat', fromMe: true, deleteCommand: false}, (async (message, match) => {
-    if (GAME.inGame) {
-        await new Promise(r => setTimeout(r, 600));
-
-        await message.client.sendMessage(message.jid,bas,MessageType.text);
-        await new Promise(r => setTimeout(r, 2000));
-        await message.client.sendMessage(message.jid,bas1,MessageType.text);
-        await new Promise(r => setTimeout(r, 2000));
-        await message.client.sendMessage(message.jid,bas2,MessageType.text);
-
-    }
-}));
-const bit = "Oyun Bitti!"
-Asena.addCommand({on: '#bitir', fromMe: true, deleteCommand: false}, (async (message, match) => {
-    if (GAME.inGame) {
-        GAME.inGAME = false
-        await message.client.sendMessage(message.jid,bit,MessageType.text);
-    }
-}));
-
-module.exports = { secondsToHms };
