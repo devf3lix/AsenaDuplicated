@@ -12,7 +12,6 @@
             "WARN": "Uyarı"
         },
         "_plugin": {
-            "INSTALL_DESC": "Plugin yükler.\n⌨️ Örnek: .install https://gist.github.com/f3lixblack/5ca7fc3a4377aa5cce50059527f043db",
             "NEED_URL": "Lütfen bir URL giriniz! Örnek:",
             "INVALID_URL": "```Lütfen bir geçerli URL giriniz!```",
             "INVALID_PLUGIN": "*❌ Plugininiz hatalı!*\n*Hata:*",
