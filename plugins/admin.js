@@ -170,7 +170,7 @@ Asena.addCommand({pattern: 'götünüindir ?(.*)', fromMe: true, onlyGroup: true
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/giphy (3).mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "```Katil Piçler Yetkilileri Tarafından Götün İndirildi!```" }
+                { mimetype: Mimetype.gif, caption: "```PicassoBot Yetkilileri Tarafından Götün İndirildi!```" }
             )
             await message.client.sendMessage(message.jid,'```Şansına Küs``` ' + '@' + message.reply_message.data.participant.split("@")[0] + ' 😈', MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
             await message.client.groupDemoteAdmin(message.jid, [message.reply_message.data.participant]);
