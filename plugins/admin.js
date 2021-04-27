@@ -34,7 +34,7 @@ Asena.addCommand({pattern: 'siktiret ?(.*)', fromMe: true, onlyGroup: true, desc
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/Edited_20210227_152650.mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "Katil Piçler Tarafından Banlandın!" }
+                { mimetype: Mimetype.gif, caption: "PicassoBot Tarafından Banlandın!" }
             )
             await message.client.sendMessage(message.jid,'```Salak Amk``` ' +'@' + message.reply_message.data.participant.split("@")[0] + ' 😈', MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
             await message.client.groupRemove(message.jid, [message.reply_message.data.participant]);
