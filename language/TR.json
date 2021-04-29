@@ -71,9 +71,9 @@
             "MUST_TEXT": "```Lütfen herhangi bir mesajı yanıtlayın```"
         },
         "heroku": {
-            "RESTART_DESC": "KP Bot'i yeniden başlatın",
+            "RESTART_DESC": "PicassoBot'i yeniden başlatın",
             "RESTART_MSG": "```Picasso tarafından onay alındı yeniden Başlatılıyor...```",
-            "SHUTDOWN_DESC": "KP Bot'i kapatır.",
+            "SHUTDOWN_DESC": "PicassoBot'i kapatır.",
             "SHUTDOWN_MSG": "*Zaten Uykum Gelmişti.\n*Teşekkürler ve İyi Geceler Sahibim..*\n```KP Bot Kapatılıyor... ⛔```",
             "DYNO_DESC": "Heroku dyno kullanımını kontrol edin",
             "DYNO_TOTAL": "```Toplam Kota```",
@@ -127,7 +127,7 @@
         "memes": {
             "MEMES_DESC": "Yanıt verdiğiniz fotoğrafa yazdığınız yazıyı ekler.\n⌨️ Örnek: .meme TEST;YAPIYOR",
             "NEED_REPLY": "*Bir fotoğraf veya videoya yanıt verin!*",
-            "DOWNLOADING": "```KP Bot Tarafından Medya indiriliyor & meme yapılıyor...```"
+            "DOWNLOADING": "```PicassoBot Tarafından Medya indiriliyor & meme yapılıyor...```"
         },
         "ocr": {
             "OCR_DESC": "Yanıt verdiğiniz fotoğraftaki yazıları okur.\n⌨️ Örnek: .ocr tr",
@@ -141,11 +141,11 @@
             "KICKME": "```Ben Gidiyorum. 🤠```",
             "PP_DESC": "Yanıt verdiğiniz fotoğrafı profil fotoğrafınız yapar.",
             "NEED_PHOTO": "*Bana bir fotoğraf ver!*",
-            "PPING": "```KP Bot Tarafından Profil fotoğrafı yapılıyor...```",
+            "PPING": "```PicassoBot Tarafından Profil fotoğrafı yapılıyor...```",
             "BLOCK_DESC": "Belirttiğiniz kullanıcıyı engeller.",
             "UNBLOCK_DESC": "Belirttiğiniz kullanıcının engelini kaldırır.",
-            "BLOCKED": "FelixBlack Tarafından engellendin. Şansına Küs..",
-            "UNBLOCKED": "FelixBlack Tarafından engelin kalktı. Şanslısın..",
+            "BLOCKED": "Picasso Tarafından engellendin. Şansına Küs..",
+            "UNBLOCKED": "Picasso Tarafından engelin kalktı. Şanslısın..",
             "BLOCKED_UPPER": "Engellendin!",
             "UNBLOCKED_UPPER": "Engelini kaldırdım.",
             "NEED_USER": "Bana bir kullanıcı ver!",
@@ -205,7 +205,7 @@
         "updater": {
             "UPDATER_DESC": "Güncelleme denetler.",
             "UPDATE": "*Picasso Abi herhangi bir değişiklik mevcut değil!*",
-            "NEW_UPDATE": "*Picasso Abi, Felix Abi Tarafından Güncellemeler Bunlar!*\n\nDeğişiklikler:\n```",
+            "NEW_UPDATE": "*Picasso Abi, Developer Tarafından Güncellemeler Bunlar!*\n\nDeğişiklikler:\n```",
             "UPDATE_NOW_DESC": "Güncelleme yapar.",
             "UPDATING": "_Onay alındı lütfen bekleyiniz!..._",
             "INVALID_HEROKU": "*❌ Heroku bilgileriniz yanlış!*",
