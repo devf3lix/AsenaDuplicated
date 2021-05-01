@@ -14,7 +14,7 @@ const Language = require('../language');
 const Lang = Language.getString('ttp');
 
 
-if (conf.WORKTYPE == 'private') {
+if (config.WORKTYPE == 'private') {
 
 Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: true, desc: Lang.TTP_DESC, dontAddCommand:true }, (async (message, match) => {
            
@@ -291,7 +291,7 @@ Asena.addCommand({ pattern: 'mmetalttp ?(.*)', fromMe: true, desc: Lang.MMETAL_D
 }));
 }
 
-if (conf.WORKTYPE == 'public') {
+else if (config.WORKTYPE == 'public') {
 
 Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: false, desc: Lang.TTP_DESC, dontAddCommand:true }, (async (message, match) => {
            
