@@ -4,16 +4,50 @@ Instagram: www.instagram.com/kyrie.baran
 */
 
 const Asena = require('../events');
-const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
+const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
-const GW = "Yazıyı dark neon fotoğrafına çevirir."
-const NM = "Anime banner gönderir."
+const Config = require('../config');
 
 const Language = require('../language');
 const Lang = Language.getString('ttp');
 
-Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: true, desc: Lang.TTP_DESC, dontAddCommand:true }, (async (message, match) => {
+
+if (Config.WORKTYPE == 'private') {
+
+    Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: true, desc: Lang.TTP_DESC }, (async (message, match) => {
+
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
+
+        var ttinullimage = await axios.get(`https://api.xteam.xyz/ttp?file&text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}`, { responseType: 'arraybuffer' })
+
+        await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by WhatsAsena' })
+
+    }));
+
+    Asena.addCommand({ pattern: 'attp ?(.*)', fromMe: true, desc: Lang.ATTP_DESC }, (async (message, match) => {
+
+        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
+
+        var ttinullimage = await axios.get(`https://api.xteam.xyz/attp?file&text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}`, { responseType: 'arraybuffer' })
+
+
+        await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.sticker, { mimetype: Mimetype.webp })
+
+    }));
+
+    Asena.addCommand({ pattern: 'glowttp ?(.*)', fromMe: true, desc: Lang.GLOW_DESC }, (async (message, match) => {
+
+        if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
+
+        var ttinullimage = await axios.get(`https://videfikri.com/api/textmaker/glowingneon/?text=${match[1].replace(/Ö/g, "%C3%96").replace(/ö/g, "%C3%B6").replace(/ü/g, "%C3%BC").replace(/Ü/g, "%C3%9C").replace(/Ğ/g, "%C4%9E").replace(/ğ/g, "%C4%9F").replace(/ş/g, "%C5%9F").replace(/Ş/g, "%C5%9E").replace(/ç/g, "%C3%A7").replace(/Ç/g, "%C3%87").replace(/ı/g, "%C4%B1").replace(/i/g, "%69").replace(/"/g, "%22").replace(/İ/g, "%C4%B0")}`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by WhatsAsena' })
+
+    }));
+}
+else if (Config.WORKTYPE == 'public') {
+Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: false, desc: Lang.TTP_DESC, dontAddCommand:true }, (async (message, match) => {
            
     if (match[1] === '') return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text);
 
@@ -23,7 +57,7 @@ Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: true, desc: Lang.TTP_DESC, dont
 
 }));
 
-Asena.addCommand({ pattern: 'animettp ?(.*)', fromMe: true, desc: Lang.ANİME_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'animettp ?(.*)', fromMe: false, desc: Lang.ANİME_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -33,7 +67,7 @@ Asena.addCommand({ pattern: 'animettp ?(.*)', fromMe: true, desc: Lang.ANİME_DE
 
 }));
 
-Asena.addCommand({ pattern: 'attp ?(.*)', fromMe: true, desc: Lang.ATTP_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'attp ?(.*)', fromMe: false, desc: Lang.ATTP_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -44,7 +78,7 @@ Asena.addCommand({ pattern: 'attp ?(.*)', fromMe: true, desc: Lang.ATTP_DESC, do
 
 }));
 
-Asena.addCommand({ pattern: 'firettp ?(.*)$', fromMe: true, desc: Lang.FIRE_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'firettp ?(.*)$', fromMe: false, desc: Lang.FIRE_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -55,7 +89,7 @@ Asena.addCommand({ pattern: 'firettp ?(.*)$', fromMe: true, desc: Lang.FIRE_DESC
 
 }));
 
-Asena.addCommand({ pattern: 'neonttp ?(.*)', fromMe: true, desc: Lang.NEON_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'neonttp ?(.*)', fromMe: false, desc: Lang.NEON_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -65,7 +99,7 @@ Asena.addCommand({ pattern: 'neonttp ?(.*)', fromMe: true, desc: Lang.NEON_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'avengersttp ?(.*)', fromMe: true, desc: Lang.AVENGERS_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'avengersttp ?(.*)', fromMe: false, desc: Lang.AVENGERS_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -87,7 +121,7 @@ Asena.addCommand({ pattern: 'avengersttp ?(.*)', fromMe: true, desc: Lang.AVENGE
 
 }));
 
-Asena.addCommand({ pattern: 'leafttp ?(.*)', fromMe: true, desc: Lang.LEAF_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'leafttp ?(.*)', fromMe: false, desc: Lang.LEAF_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -97,7 +131,7 @@ Asena.addCommand({ pattern: 'leafttp ?(.*)', fromMe: true, desc: Lang.LEAF_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'harryttp ?(.*)', fromMe: true, desc: Lang.HARRY_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'harryttp ?(.*)', fromMe: false, desc: Lang.HARRY_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -107,7 +141,7 @@ Asena.addCommand({ pattern: 'harryttp ?(.*)', fromMe: true, desc: Lang.HARRY_DES
 
 }));
 
-Asena.addCommand({ pattern: 'metalttp ?(.*)', fromMe: true, desc: Lang.METAL_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'metalttp ?(.*)', fromMe: false, desc: Lang.METAL_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -117,7 +151,7 @@ Asena.addCommand({ pattern: 'metalttp ?(.*)', fromMe: true, desc: Lang.METAL_DES
 
 }));
 
-Asena.addCommand({ pattern: 'glowttp ?(.*)', fromMe: true, desc: Lang.GLOW_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'glowttp ?(.*)', fromMe: false, desc: Lang.GLOW_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -127,7 +161,7 @@ Asena.addCommand({ pattern: 'glowttp ?(.*)', fromMe: true, desc: Lang.GLOW_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'paperttp ?(.*)', fromMe: true, desc: Lang.PAPER_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'paperttp ?(.*)', fromMe: false, desc: Lang.PAPER_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -137,7 +171,7 @@ Asena.addCommand({ pattern: 'paperttp ?(.*)', fromMe: true, desc: Lang.PAPER_DES
 
 }));
 
-Asena.addCommand({ pattern: 'candlettp ?(.*)', fromMe: true, desc: Lang.CANDLE_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'candlettp ?(.*)', fromMe: false, desc: Lang.CANDLE_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -147,7 +181,7 @@ Asena.addCommand({ pattern: 'candlettp ?(.*)', fromMe: true, desc: Lang.CANDLE_D
 
 }));
 
-Asena.addCommand({ pattern: 'lovettp ?(.*)', fromMe: true, desc: Lang.LOVE_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'lovettp ?(.*)', fromMe: false, desc: Lang.LOVE_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -157,7 +191,7 @@ Asena.addCommand({ pattern: 'lovettp ?(.*)', fromMe: true, desc: Lang.LOVE_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'flowerttp ?(.*)', fromMe: true, desc: Lang.FLOWER_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'flowerttp ?(.*)', fromMe: false, desc: Lang.FLOWER_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -167,7 +201,7 @@ Asena.addCommand({ pattern: 'flowerttp ?(.*)', fromMe: true, desc: Lang.FLOWER_D
 
 }));
 
-Asena.addCommand({ pattern: 'glassttp ?(.*)', fromMe: true, desc: Lang.GLASS_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'glassttp ?(.*)', fromMe: false, desc: Lang.GLASS_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -177,7 +211,7 @@ Asena.addCommand({ pattern: 'glassttp ?(.*)', fromMe: true, desc: Lang.GLASS_DES
 
 }));
 
-Asena.addCommand({ pattern: 'coffeettp ?(.*)', fromMe: true, desc: Lang.COFFEE_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'coffeettp ?(.*)', fromMe: false, desc: Lang.COFFEE_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -187,7 +221,7 @@ Asena.addCommand({ pattern: 'coffeettp ?(.*)', fromMe: true, desc: Lang.COFFEE_D
 
 }));
 
-Asena.addCommand({ pattern: 'coffeecupttp ?(.*)', fromMe: true, desc: Lang.COFFEECUP_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'coffeecupttp ?(.*)', fromMe: false, desc: Lang.COFFEECUP_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -197,7 +231,7 @@ Asena.addCommand({ pattern: 'coffeecupttp ?(.*)', fromMe: true, desc: Lang.COFFE
 
 }));
 
-Asena.addCommand({ pattern: 'candyttp ?(.*)', fromMe: true, desc: Lang.CANDY_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'candyttp ?(.*)', fromMe: false, desc: Lang.CANDY_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -207,7 +241,7 @@ Asena.addCommand({ pattern: 'candyttp ?(.*)', fromMe: true, desc: Lang.CANDY_DES
 
 }));
 
-Asena.addCommand({ pattern: 'sandttp ?(.*)', fromMe: true, desc: Lang.SAND_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'sandttp ?(.*)', fromMe: false, desc: Lang.SAND_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -217,7 +251,7 @@ Asena.addCommand({ pattern: 'sandttp ?(.*)', fromMe: true, desc: Lang.SAND_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'skyttp ?(.*)', fromMe: true, desc: Lang.SKY_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'skyttp ?(.*)', fromMe: false, desc: Lang.SKY_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -227,7 +261,7 @@ Asena.addCommand({ pattern: 'skyttp ?(.*)', fromMe: true, desc: Lang.SKY_DESC, d
 
 }));
 
-Asena.addCommand({ pattern: 'snowttp ?(.*)', fromMe: true, desc: Lang.SNOW_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'snowttp ?(.*)', fromMe: false, desc: Lang.SNOW_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -237,7 +271,7 @@ Asena.addCommand({ pattern: 'snowttp ?(.*)', fromMe: true, desc: Lang.SNOW_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'textttp ?(.*)', fromMe: true, desc: Lang.TEXT_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'textttp ?(.*)', fromMe: false, desc: Lang.TEXT_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -247,7 +281,7 @@ Asena.addCommand({ pattern: 'textttp ?(.*)', fromMe: true, desc: Lang.TEXT_DESC,
 
 }));
 
-Asena.addCommand({ pattern: 'silverttp ?(.*)', fromMe: true, desc: Lang.SİLVER_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'silverttp ?(.*)', fromMe: false, desc: Lang.SİLVER_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -257,7 +291,7 @@ Asena.addCommand({ pattern: 'silverttp ?(.*)', fromMe: true, desc: Lang.SİLVER_
 
 }));
 
-Asena.addCommand({ pattern: 'smokettp ?(.*)', fromMe: true, desc: Lang.SMOKE_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'smokettp ?(.*)', fromMe: false, desc: Lang.SMOKE_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -267,7 +301,7 @@ Asena.addCommand({ pattern: 'smokettp ?(.*)', fromMe: true, desc: Lang.SMOKE_DES
 
 }));
 
-Asena.addCommand({ pattern: 'starsttp ?(.*)', fromMe: true, desc: Lang.STARS_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'starsttp ?(.*)', fromMe: false, desc: Lang.STARS_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -277,7 +311,7 @@ Asena.addCommand({ pattern: 'starsttp ?(.*)', fromMe: true, desc: Lang.STARS_DES
 
 }));
 
-Asena.addCommand({ pattern: 'mmetalttp ?(.*)', fromMe: true, desc: Lang.MMETAL_DESC, dontAddCommand:true }, (async (message, match) => {
+Asena.addCommand({ pattern: 'mmetalttp ?(.*)', fromMe: false, desc: Lang.MMETAL_DESC, dontAddCommand:true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(Lang.NEED_WORD);
 
@@ -286,3 +320,4 @@ Asena.addCommand({ pattern: 'mmetalttp ?(.*)', fromMe: true, desc: Lang.MMETAL_D
     await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made By PicassoBot' })
 
 }));
+}
