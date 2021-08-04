@@ -34,7 +34,7 @@ Asena.addCommand({pattern: 'banla ?(.*)', fromMe: true, onlyGroup: true, desc: L
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/Edited_20210227_152650.mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "Legendary Gangs Yetkilileri Tarafından Banlandın!" }
+                { mimetype: Mimetype.gif, caption: "ApranaX Yetkilileri Tarafından Banlandın!" }
             )
             await message.client.sendMessage(message.jid,'```Salak Amk``` ' +'@' + message.reply_message.data.participant.split("@")[0] + ' 😈', MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
             await message.client.groupRemove(message.jid, [message.reply_message.data.participant]);
@@ -47,7 +47,7 @@ Asena.addCommand({pattern: 'banla ?(.*)', fromMe: true, onlyGroup: true, desc: L
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/Edited_20210227_152650.mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "Legendary Gangs Yetkilileri Tarafından Banlandın!" }
+                { mimetype: Mimetype.gif, caption: "ApranaX Yetkilileri Tarafından Banlandın!" }
             )
             await message.client.sendMessage(message.jid,'```Salak Amk``` ' + etiketler + ' 😈', MessageType.text, {contextInfo: {mentionedJid: message.mention}});
             await message.client.groupRemove(message.jid, message.mention);
@@ -101,7 +101,7 @@ Asena.addCommand({pattern: 'yetkilendir?(.*)', fromMe: true, onlyGroup: true, de
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/giphy (2).mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "```Legendary Gangs Yetkilileri Tarafından Yetkilendirildin!```" }
+                { mimetype: Mimetype.gif, caption: "```ApranaX Yetkilileri Tarafından Yetkilendirildin!```" }
             )
             await message.client.sendMessage(message.jid,'```Buna Sevinmelisin``` ' + '@' + message.reply_message.data.participant.split("@")[0] + ' 🎉', MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
             await message.client.groupMakeAdmin(message.jid, [message.reply_message.data.participant]);
@@ -120,7 +120,7 @@ Asena.addCommand({pattern: 'yetkilendir?(.*)', fromMe: true, onlyGroup: true, de
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/giphy (2).mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "```Legendary Gangs Yetkilileri Tarafından Yetkilendirildin!```" }
+                { mimetype: Mimetype.gif, caption: "```ApranaX Yetkilileri Tarafından Yetkilendirildin!```" }
             )
             await message.client.sendMessage(message.jid,'```Buna Sevinmelisin``` ' + etiketler + ' 🎉', MessageType.text, {contextInfo: {mentionedJid: message.mention}});
             await message.client.groupMakeAdmin(message.jid, message.mention);
@@ -170,7 +170,7 @@ Asena.addCommand({pattern: 'yetkial ?(.*)', fromMe: true, onlyGroup: true, desc:
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/giphy (3).mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "```Legendary Gangs Yetkilileri Tarafından Yetkine El Konuldu !```" }
+                { mimetype: Mimetype.gif, caption: "```ApranaX Yetkilileri Tarafından Yetkine El Konuldu !```" }
             )
             await message.client.sendMessage(message.jid,'```Şansına Küs``` ' + '@' + message.reply_message.data.participant.split("@")[0] + ' 😈', MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
             await message.client.groupDemoteAdmin(message.jid, [message.reply_message.data.participant]);
@@ -188,7 +188,7 @@ Asena.addCommand({pattern: 'yetkial ?(.*)', fromMe: true, onlyGroup: true, desc:
                 message.jid, 
                 fs.readFileSync("/root/WhatsAsenaDuplicated/media/gif/giphy (3).mp4"),
                 MessageType.video, 
-                { mimetype: Mimetype.gif, caption: "```Legendary Gangs Yetkilileri Tarafından Yetkine El Konuldu!```" }
+                { mimetype: Mimetype.gif, caption: "```ApranaX Yetkilileri Tarafından Yetkine El Konuldu!```" }
             )
             await message.client.sendMessage(message.jid,'```Şansına Küs``` ' + etiketler + ' 😈', MessageType.text, {contextInfo: {mentionedJid: message.mention}});
             await message.client.groupDemoteAdmin(message.jid, message.mention);
